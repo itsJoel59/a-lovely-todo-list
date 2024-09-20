@@ -1,16 +1,44 @@
 const list = [];
 let count = 0;
-const input = document.querySelector("#userInput");
 const addBtn = document.querySelector("#addBtn");
 const countLbl = document.querySelector("#countList");
 const listHtml = document.querySelector("#todolist");
+const input = document.querySelector("#userInput");
 
-/* addBtn.addEventListener(
+addBtn.addEventListener(
     "click",
-    countUp,
-    false
-); */
+    function(event){
 
+        if(checkUserInput()){
+            list.push(input.value);
+            const node = document.createElement("li");
+            const textnode = document.createTextNode(input.value);
+            node.appendChild(textnode);
+            listHtml.appendChild(node);
+            countUp();
+            clearInputField();
+        }
+    },
+    false
+);
+
+//Metod som rensar input-fältet
+function clearInputField(){
+    input.value = null;
+}
+
+// Metod som kollar om användaren skrivit något
+function checkUserInput() {
+    if (input.value == null || input.value == "") {
+       alert("Please type something. Can’t be blank or empty !!!");
+       return false;
+    }
+    else{
+        return true;
+    }
+ }
+
+// 2 metoder som uppdaterar list-räknaren
 function countUp(){
     count++;
     countLbl.innerHTML = "Count: " + count;
