@@ -5,7 +5,18 @@ const addBtn = document.querySelector("#addBtn");
 const countLbl = document.querySelector("#countList");
 const listHtml = document.querySelector("#todolist");
 
+/* addBtn.addEventListener(
+    "click",
+    countUp,
+    false
+); */
+
 function countUp(){
     count++;
-    countLbl.innerHTML = "Count" + count;
+    countLbl.innerHTML = "Count: " + count;
+}
+
+function countDown(){
+    count--;
+    countLbl.innerHTML = "Count: " + count;
 }
