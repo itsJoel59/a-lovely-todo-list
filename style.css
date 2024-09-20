@@ -3,3 +3,9 @@
 div{
     margin-top: 10px;
 }
+
+ /* class properties for completed tasks */
+.checkedTask{
+    background-color: red;
+    text-decoration: line-through;
+}
