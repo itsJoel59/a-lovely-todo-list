@@ -16,6 +16,9 @@ addBtn.addEventListener(
             node.appendChild(textnode);
             listHtml.appendChild(node);
             countUp();
+            console.log("Added " + input.value +
+                "\nList:" + '\n' + list
+            );
             clearInputField();
         }
     },
