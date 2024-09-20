@@ -25,6 +25,26 @@ addBtn.addEventListener(
     false
 );
 
+listHtml.addEventListener(
+    "click",
+    function(event){
+        const target = event.target;
+    }
+);
+
+//Två metoder för att ändra egenskaper i ett list-element
+function addClass(){
+
+    target.classList.add("checkedTask");
+
+}
+
+function removeClass(){
+
+    target.classList.remove("checkedTask");
+
+}
+
 //Metod som rensar input-fältet
 function clearInputField(){
     input.value = null;
