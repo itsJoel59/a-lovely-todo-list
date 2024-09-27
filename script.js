@@ -68,9 +68,12 @@ addBtn.addEventListener(
             binIcon.addEventListener(
                 "click",
                 function(event){
-
+                    if(item.firstChild.className == "checkedTask"){
+                        completedCount--;
+                    }
                     searchAndRemove(item.firstChild.textContent);
                     listHtml.removeChild(item);
+
                 },
                 false
             )
@@ -102,6 +105,7 @@ clearAllBtn.addEventListener(
 
             listHtml.innerHTML = "";
             removeAll();
+            completedCount = 0;
         }
     },
     false
