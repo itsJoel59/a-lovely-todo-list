@@ -42,15 +42,13 @@ addBtn.addEventListener(
                     if(text.className == "checkedTask"){
 
                         removeClass(text);
-                        completedCount--;
-                        updateLabel();
+                        completedCount = setCountAndLabelTo(completedCount - 1);
                         searchAndChange(item.firstChild.textContent, false);
                     }
                     else{
 
                         addClass(text);
-                        completedCount++;
-                        updateLabel();
+                        completedCount = setCountAndLabelTo(completedCount + 1);
                         searchAndChange(item.firstChild.textContent, true);
                     }
 
@@ -69,7 +67,7 @@ addBtn.addEventListener(
                 "click",
                 function(event){
                     if(item.firstChild.className == "checkedTask"){
-                        completedCount--;
+                        completedCount = setCountAndLabelTo(completedCount - 1);
                     }
                     searchAndRemove(item.firstChild.textContent);
                     listHtml.removeChild(item);
@@ -84,8 +82,10 @@ addBtn.addEventListener(
             
 
             console.log("Added " + 
-                inputValue
+                inputValue + 
+                tasks
             );
+        
             
             clearInputField();
         }
@@ -105,7 +105,7 @@ clearAllBtn.addEventListener(
 
             listHtml.innerHTML = "";
             removeAll();
-            completedCount = 0;
+            completedCount = setCountAndLabelTo(0);
         }
     },
     false
@@ -144,7 +144,6 @@ function searchAndChange(text, status){
 
     let changeIndex = tasks.map(t => t.task).indexOf(text);
     tasks[changeIndex].completed = status;
-    console.log(tasks);
 }
 
 //   2 metoder som tar bort ett/alla element i listan och lägger
@@ -164,9 +163,10 @@ function removeAll(){
 }
 
 //Metod som uppdaterar räknarens display
-function updateLabel(){
+function setCountAndLabelTo(number){
 
-    countLbl.innerText = "Completed tasks: " + completedCount;
+    countLbl.innerText = "Completed tasks: " + number;
+    return number;
 }
 
 function showArray(array){
