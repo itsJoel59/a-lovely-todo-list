@@ -1,0 +1,3 @@
+This is a Todo-list made for an assignment.
+
+I had some trouble getting the console to print out the names of each element in the list, it only wrote each object as [Object]...
