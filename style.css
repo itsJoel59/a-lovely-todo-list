@@ -6,6 +6,6 @@ div{
 
  /* class properties for completed tasks */
 .checkedTask{
-    background-color: red;
     text-decoration: line-through;
+    color: red;
 }
