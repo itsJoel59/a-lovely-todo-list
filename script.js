@@ -96,13 +96,15 @@ addBtn.addEventListener(
 clearAllBtn.addEventListener(
     "click",
     function(event){
-
+        const error = document.querySelector("#errorClrBtn");
         if(listHtml.childElementCount < 1){
 
-            alert("Try adding some tasks to the list.\nCan’t remove something if it doesn't exist!");
+            error.innerHTML = "<span style='color: red;'>" +
+            "Add something to the list first before removing</span>";
         }
         else{
 
+            error.innerHTML = "";
             listHtml.innerHTML = "";
             removeAll();
             completedCount = setCountAndLabelTo(0);
@@ -131,11 +133,14 @@ function clearInputField(){
 
 // Metod som kollar om användaren skrivit något
 function checkUserInput() {
+    const error = document.querySelector("#inputError");
     if (input.value == null || input.value == "") {
-       alert("Please type something. Can’t be blank or empty !!!");
+       error.innerHTML = "<span style='color: red;'>" + 
+       "Write something first add it</span>";
        return false;
     }
     else{
+        error.innerHTML = "";
         return true;
     }
  }
