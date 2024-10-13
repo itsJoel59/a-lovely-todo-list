@@ -97,7 +97,7 @@ clearAllBtn.addEventListener(
     "click",
     function(event){
         const error = document.querySelector("#errorClrBtn");
-        if(listHtml.childElementCount < 1){
+        /* if(listHtml.childElementCount < 1){
 
             error.innerHTML = "<span style='color: red;'>" +
             "Add something to the list first before removing</span>";
@@ -108,10 +108,32 @@ clearAllBtn.addEventListener(
             listHtml.innerHTML = "";
             removeAll();
             completedCount = setCountAndLabelTo(0);
+        } */
+
+
+        if (listHtml.childElementCount < 1) {
+
+            if (error.className == 'Alert') {
+
+            }
+
+            else {
+                error.innerHTML = "<span style='color: red;'>" +
+                "Add something to the list first before removing</span>";
+                error.classList.toggle('Alert');
+            }
         }
-    },
-    false
-)
+
+            else {
+                error.innerHTML = "";
+                error.classList.toggle('Alert');
+                listHtml.innerHTML = "";
+                removeAll();
+                completedCount = setCountAndLabelTo(0);
+            }
+        },
+        false
+    )
 
 //Två metoder för att lägga till/ta bort en klass i ett list-element
 function addClass(element){
@@ -133,16 +155,31 @@ function clearInputField(){
 
 // Metod som kollar om användaren skrivit något
 function checkUserInput() {
+
     const error = document.querySelector("#inputError");
+    let theValue;
+
     if (input.value == null || input.value == "") {
-       error.innerHTML = "<span style='color: red;'>" + 
-       "Write something first add it</span>";
-       return false;
+
+        if (error.className == 'Alert') {
+            theValue = false;
+        }
+
+        else {
+            error.innerHTML = "<span style='color: red;'>" + 
+            "Write something first add it</span>";
+            error.classList.toggle('Alert');
+            theValue = false;
+        }
     }
-    else{
+
+    else {
         error.innerHTML = "";
-        return true;
+        error.classList.toggle('Alert');
+        theValue = true;
     }
+
+    return theValue;
  }
 
 function searchAndChange(text, status){
