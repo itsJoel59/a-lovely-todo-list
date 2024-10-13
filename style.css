@@ -10,7 +10,7 @@ div{
  /* class properties for completed tasks */
 .checkedTask{
     text-decoration: line-through;
-    color: red;
+    opacity: 0.4;
 }
 
 ul {
@@ -86,12 +86,25 @@ ul {
     }
 }
 
+/* I noticed that <ul> seems to have a default padding-inline-start
+property, so I trimmed it to make its <li> elements more centered. */
 #todolist {
 
     padding-inline-start: 5px;
+}
+li .itemtext {
+
+    transition: opacity 0.5s;
+}
+
+li .itemtext:hover {
+
+    text-decoration: line-through;
 }
 
 li span {
 
     margin-left: 10px;
 }
+
+

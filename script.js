@@ -31,6 +31,7 @@ addBtn.addEventListener(
             //const textnode = document.createTextNode(input.value);
 
             const text = document.createElement("span");
+            text.classList.toggle('itemtext');
             text.innerText = inputValue;
             item.appendChild(text);
 
@@ -39,7 +40,7 @@ addBtn.addEventListener(
                 "click",
                 function(event){
                     
-                    if(text.className == "checkedTask"){
+                    if(text.className == "itemtext checkedTask"){
 
                         removeClass(text);
                         completedCount = setCountAndLabelTo(completedCount - 1);
@@ -66,7 +67,7 @@ addBtn.addEventListener(
             binIcon.addEventListener(
                 "click",
                 function(event){
-                    if(item.firstChild.className == "checkedTask"){
+                    if(item.firstChild.className == "itemtext checkedTask"){
                         completedCount = setCountAndLabelTo(completedCount - 1);
                     }
                     searchAndRemove(item.firstChild.textContent);
