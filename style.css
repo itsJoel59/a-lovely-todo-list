@@ -86,6 +86,11 @@ ul {
     }
 }
 
+#todolist {
+
+    padding-inline-start: 5px;
+}
+
 li span {
 
     margin-left: 10px;
