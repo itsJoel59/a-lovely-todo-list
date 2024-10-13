@@ -29,17 +29,19 @@ ul {
     /* transition: transform 500ms;
     transform: translateY(250px); */
     animation-name: fly-in;
-    animation-duration: 1s;
+    animation-duration: 0.9s;
 }
 
 @keyframes fly-in {
 
     0% {
         margin-top: -250px;
+        opacity: 0;
     }
 
     60% {
         margin-top: 100px;
+        opacity: 1.0;
     }
 
     90% {
