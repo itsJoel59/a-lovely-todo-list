@@ -98,24 +98,11 @@ clearAllBtn.addEventListener(
     "click",
     function(event){
         const error = document.querySelector("#errorClrBtn");
-        /* if(listHtml.childElementCount < 1){
-
-            error.innerHTML = "<span style='color: red;'>" +
-            "Add something to the list first before removing</span>";
-        }
-        else{
-
-            error.innerHTML = "";
-            listHtml.innerHTML = "";
-            removeAll();
-            completedCount = setCountAndLabelTo(0);
-        } */
-
-
+        
         if (listHtml.childElementCount < 1) {
 
             if (error.className == 'Alert') {
-
+                console.log("Has alerted once")
             }
 
             else {
@@ -188,6 +175,7 @@ function searchAndChange(text, status){
     let changeIndex = tasks.map(t => t.task).indexOf(text);
     tasks[changeIndex].completed = status;
 }
+
 
 //   2 metoder som tar bort ett/alla element i listan och lägger
 //  det i en annan lista via metoderna splice och concat
