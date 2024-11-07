@@ -1,11 +1,45 @@
 body {
-    background-image: url(https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    height: 800px;
+    background-image: linear-gradient(rgb(245, 198, 204), rgb(213, 98, 113));
     cursor:default;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#titleContainer {
+
+    margin: 0;
+
+}
+
+#title {
+
+    font-family: 'Times New Roman';
+    margin: 0;
+
+}
+
+#count-Container {
+
+    margin: 0 0 20px 0;
+
+}
+
+#countList {
+
+    font-size: 9px;
+    font-weight: bold;
+    margin: 0;
+
 }
 
 div{
     margin-top: 10px;
+}
+
+#inputError {
+
+    font-size: 9px;
+
 }
 
  /* class properties for completed tasks */
@@ -19,14 +53,14 @@ ul {
     list-style: none;
 }
 
-.main {
-    background-color: azure;
-    width: 500px;
+#main {
+    background-color: #FFFFFF; 
+    width: 300px;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 6px;
     padding-bottom: 25px;
     margin: 60px auto auto;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     /* transition: transform 500ms;
     transform: translateY(250px); */
     animation-name: fly-in;
@@ -123,6 +157,13 @@ li .itemtext {
 li .itemtext:hover {
 
     text-decoration: line-through;
+    cursor: pointer;
+}
+
+li .binIcon:hover {
+
+    cursor: pointer;
+
 }
 
 li span {

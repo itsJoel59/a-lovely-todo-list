@@ -94,7 +94,7 @@ addBtn.addEventListener(
     false
 );
 
-clearAllBtn.addEventListener(
+/* clearAllBtn.addEventListener(
     "click",
     function(event){
         const error = document.querySelector("#errorClrBtn");
@@ -121,7 +121,7 @@ clearAllBtn.addEventListener(
             }
         },
         false
-    )
+    ) */
 
 //Två metoder för att lägga till/ta bort en klass i ett list-element
 function addClass(element){
@@ -154,8 +154,8 @@ function checkUserInput() {
         }
 
         else {
-            error.innerHTML = "<span style='color: red;'>" + 
-            "Write something first add it</span>";
+            error.innerHTML = "<span style='color: red; font-style: italic;'>" + 
+            "Input must not be empty</span>";
             error.classList.toggle('Alert');
             theValue = false;
         }
@@ -196,7 +196,7 @@ function removeAll(){
 //Metod som uppdaterar räknarens display
 function setCountAndLabelTo(number){
 
-    countLbl.innerText = "Completed tasks: " + number;
+    countLbl.innerText = number + " completed";
     return number;
 }
 

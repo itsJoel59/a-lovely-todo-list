@@ -9,43 +9,43 @@
 </head>
 <body>
 
-    <div class="main">
-        <main>
-            <div>
-                <h1>ToDo</h1>
-            </div>
-                
-            <div>
-                <input type="text" id="userInput" placeholder="Add task...">
-                <button type="button" id ="addBtn">
-                    +
-                </button>
-                
-            </div>
-            <span id="inputError"></span>
+    <main id="main">
+        <div id="titleContainer">
+            <h1 id="title">My ToDo</h1>
+        </div>
+
+        <div id="count-Container">
+            <label for="keeping count" id="countList">0 completed</label>
+        </div>
             
-            <div>
-                <section>
-                    <ul id="todolist"></ul>
-        
-                    </ul>
-                </section>
-                
-            </div>
-        
-            <div>
-                <button type="button" id="clearAllBtn">
-                    Clear All
-                </button>
-            </div>
-            <div>
-                <span id="errorClrBtn"></span></div>
+        <div>
+            <input type="text" id="userInput">
+            <button type="button" id ="addBtn">
+                OK
+            </button>
             
-            <div>
-                <label for="keeping count" id="countList">Completed tasks: 0</label>
-            </div>
-        </main>
-    </div>
+        </div>
+        <span id="inputError"></span>
+        
+        <div>
+            <section>
+                <ul id="todolist"></ul>
+    
+                </ul>
+            </section>
+            
+        </div>
+    
+        <!-- <div>
+            <button type="button" id="clearAllBtn">
+                Clear All
+            </button>
+        </div>
+        <div>
+            <span id="errorClrBtn"></span></div> -->
+        
+        
+    </main>
     
 
 
